@@ -4,6 +4,13 @@ namespace Tarea2_C_
 {
     internal class Program
     {
+        static (double, double) Formula_General(double a, double b, double c)
+        {
+            double resultsum = (-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
+            double resultneg = (-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a);
+            return  (resultsum,resultneg);
+        }
+
         /// <summary>
         /// Este metodo te devolvera un booleano, si es primo te dara TRUE si no es primo te dara FALSE
         /// </summary>
@@ -72,7 +79,18 @@ namespace Tarea2_C_
 
             #region Parte 3
             {
-                //Crear la parte de la ecuacion
+                double a, b, c;
+                Console.WriteLine("Programa que resuelve la formula general\n");
+                Console.WriteLine("Introduceme el valor de a: ");
+                a = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Introduceme el valor de b: ");
+                b = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Introduceme el valor de c: ");
+                c = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("El resultado de la formula general es: ");
+                Console.WriteLine("X1 = " + Formula_General(a, b, c).Item1);
+                Console.WriteLine("X2 = " + Formula_General(a, b, c).Item2);
             }
             #endregion
 
